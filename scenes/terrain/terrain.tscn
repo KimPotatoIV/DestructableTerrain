@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvtvkyhnbmpbk"]
+
+[ext_resource type="Script" uid="uid://cs2i7pcvsqm5t" path="res://scenes/terrain/terrain.gd" id="1_5ibnn"]
+[ext_resource type="Texture2D" uid="uid://cjop8h3cimxl1" path="res://sprites/terrain.jpg" id="2_5ibnn"]
+[ext_resource type="Texture2D" uid="uid://jf7tqggcovad" path="res://sprites/grass.png" id="3_mmmjq"]
+
+[sub_resource type="Curve2D" id="Curve2D_hn2sr"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -83, 665, -259.443, -2.09229, 259.443, 2.09229, 515, 459, -292.92, -23.0151, 292.92, 23.0151, 1073, 642, -215.505, -4.18457, 215.505, 4.18457, 1637, 488, 0, 0, 0, 0, 2028, 514, 0, 0, 0, 0, 2037, 1102, 0, 0, 0, 0, -84, 1104, 0, 0, 0, 0, -82, 666)
+}
+point_count = 8
+
+[node name="Terrain" type="StaticBody2D"]
+script = ExtResource("1_5ibnn")
+
+[node name="BackgroundSky" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.811765, 1, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hn2sr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 3
+texture = ExtResource("2_5ibnn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 3
+width = 20.0
+texture = ExtResource("3_mmmjq")
+texture_mode = 1

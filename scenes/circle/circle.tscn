@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cooo8rmdgfca6"]
+
+[node name="Circle" type="Polygon2D"]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, -128, -65, -87, -155, -8, -92, 97, -3, 152, 85, 92, 134, 8, 99, -64)
